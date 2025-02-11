@@ -23,7 +23,6 @@ switch ($view) {
     case '':
         $page = 'public/index.php';
         $style = 'home.css';
-        $js = 'home.js';
         break;
     case 'admin':
         $page = 'admin/index.php';
