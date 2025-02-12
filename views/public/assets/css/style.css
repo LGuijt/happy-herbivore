@@ -1,34 +1,97 @@
-.dropdown-content {
-  display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.show {
-  display: block;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; 
+  color: #333;
+  line-height: 1.6;
 }
 
 .headerContainer {
   display: flex;
   justify-content: space-between;
-}
-.headerContainer img {
-  max-width: 20vw;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--lightBlue); 
+  position: relative; 
+  z-index: 1000; 
 }
 
-.dropdown {
+.headerContainer img {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 100vh;
+  margin-top: 70px; 
+}
+
+.sidebar {
+  width: 300px; 
+  background-color: #ffebd1; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; 
+  top: 70px; 
+  left: 0;
+  height: calc(100vh - 70px); 
+  overflow-y: auto; 
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
   align-items: center;
-  margin: 2vw 2vw 0 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fffaf0; /* Slightly lighter orange/beige */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   border-radius: 50%;
-  width: 16vw;
-  height: 16vw;
-  font-size: 30px;
-  color: white;
-  background-color: var(--darkBlue);
-  justify-content: center;
-  align-items: center;
-}/*# sourceMappingURL=style.css.map */
+  margin-right: 15px;
+}
+
+.item-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.item-details p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.item-details p:last-child {
+  margin-bottom: 0;
+}
