@@ -7,13 +7,13 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-//database connection
-// $con = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
+// database connection
+$con = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
 
-// if ($con->connect_errno) {
-//     echo "Failed to connect to MySQL: " . $con->connect_error;
-//     exit();
-// }
+if ($con->connect_errno) {
+    echo "Failed to connect to MySQL: " . $con->connect_error;
+    exit();
+}
 
 function testInput($data) {
     $data = trim($data);

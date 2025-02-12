@@ -29,6 +29,9 @@ switch ($view) {
         $style = 'admin.css';
         $js = 'admin.js';
         break;
+    case 'api':
+        $page = 'functions/allProducts.php';
+        break;
     default:
         $page = '404.php';
         $style = '404.css';
