@@ -27,15 +27,20 @@
 
 <body>
     <header>
-        <img src="assets/img/logo.png" alt="logo">
-        <div class="dropdown">
-            <div onclick="changeLanguageDrop()" class="dropbtn">EN</div>
-            <div id="myDropdown" class="dropdown-content">
-                <div onclick="changeLanguage('nl')">Nederlands</div>
-                <div onclick="changeLanguage('en')">English</div>
-                <div onclick="changeLanguage('de')">Deutsch</div>
-                <div onclick="changeLanguage('fr')">Français</div>
-                <div onclick="changeLanguage('jp')">日本語</div>
+        <div class="headerContainer">
+            <div>
+                <img src="./cdn/img/logo_dino.png" alt="logo">
+                <img src="./cdn/img/logo_text.png" alt="logo">
+            </div>
+            <div class="dropdown">
+                <div onclick="changeLanguageDrop()" class="dropbtn">EN</div>
+                <div id="myDropdown" class="dropdown-content">
+                    <div onclick="changeLanguage('nl')">Nederlands</div>
+                    <div onclick="changeLanguage('en')">English</div>
+                    <div onclick="changeLanguage('de')">Deutsch</div>
+                    <div onclick="changeLanguage('fr')">Français</div>
+                    <div onclick="changeLanguage('jp')">日本語</div>
+                </div>
             </div>
         </div>
     </header>
