@@ -1,5 +1,5 @@
 <?php
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "";
+$dbname = "happy_herbivore";
 $dbhost = "localhost";

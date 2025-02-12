@@ -1,0 +1,40 @@
+{
+    "products":[
+        {
+            "product_id": 1,
+            "product_name": "Product 1",
+            "product_price": 10.95,
+            "product_image": "morning_boost",
+            "category": "category1",
+            "category_id": 1,
+            "description": "This is a product description",
+            "kcal": 100,
+            "available": true,
+            "options": false
+        },
+        {
+            "product_id": 2,
+            "product_name": "Product 2",
+            "product_price": 10.95,
+            "product_image": "morning_boost",
+            "category": "category1",
+            "category_id": 1,
+            "description": "This is a product description",
+            "kcal": 100,
+            "available": true,
+            "options": true
+        },
+        {
+            "product_id": 3,
+            "product_name": "Product 3",
+            "product_price": 10.95,
+            "product_image": "morning_boost",
+            "category": "category2",
+            "category_id": 2,
+            "description": "This is a product description",
+            "kcal": 100,
+            "available": true,
+            "options": false
+        }
+    ]
+}
