@@ -8,6 +8,7 @@ JOIN product_name n ON p.name_id = n.id
 JOIN product_description d ON p.description_id = d.id
 WHERE p.availabe = 0
 ORDER BY c.category_id ASC";
+
 $allProductsStmt = $con->prepare($allProductsQuery);
 $allProductsStmt->bind_result($product_id, $category_id,$category_name, $image_id, $name, $description, $price, $kcal, $options);
 $allProductsStmt->execute();
