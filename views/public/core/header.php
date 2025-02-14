@@ -1,30 +1,22 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <!-- <link rel="icon" type="image/x-icon" href=""> -->
+    <title>Happy Herbivor</title>
     <link rel="stylesheet" href="<?= 'views/public/assets/css/style.css' ?>">
     <?php
-    //checkt of er een style of js bestand is meegegeven en laad deze in
-    if ($style != '') {
-        ?>
-        <link rel="stylesheet" href="<?= 'assets/css/' . $style ?>">
-        <?php
+    if (!empty($style)) {
+        echo '<link rel="stylesheet" href="' . 'assets/css/' . $style . '">';
     }
     ?>
     <script src="<?= 'views/public/assets/js/app.js' ?>" defer></script>
     <?php
-    if ($js != '') {
-        ?>
-        <script src="<?= 'assets/js/' . $js ?>" defer></script>
-        <?php
+    if (!empty($js)) {
+        echo '<script src="' . 'assets/js/' . $js . '" defer></script>';
     }
     ?>
 </head>
-
 <body>
     <header>
         <div class="headerContainer">
@@ -44,3 +36,5 @@
             </div>
         </div>
     </header>
+</body>
+</html>
