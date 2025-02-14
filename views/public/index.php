@@ -6,6 +6,7 @@ $file = json_decode($file_json, true);
 $products = $file['products'];
 
 ?>
+
     <div class="menu-container">
         <aside class="categories">
             <h2>Categories</h2>
@@ -67,6 +68,7 @@ $products = $file['products'];
                 <?php endforeach; ?>
                 </div>
         </div>
+
         <!-- <ul class="menu-list">
                 <li class="menu-item">
                     <img src="img/burger.jpg" alt="Burger">
@@ -101,7 +103,6 @@ $products = $file['products'];
                     </div>
                 </li>
             </ul> -->
-        </aside>
-    </div>
+       
 
     <?php include __DIR__ . '/core/footer.php'; ?>
