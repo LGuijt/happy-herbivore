@@ -12,7 +12,7 @@ $products = $file['products'];
         <aside class="categories">
             <h2>Categories</h2>
             <article class="category">
-                <img src="img/breakfast.jpg" alt="Burger">
+                <img src="cdn/img/products/morning_boost.png" alt="Burger">
                 <div class="category-details">
                     <h3>Breakfast</h3>
                     <p>Start your day with our delicious breakfast options.</p>
