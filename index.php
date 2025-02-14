@@ -32,6 +32,14 @@ switch ($view) {
     case 'api':
         $page = 'functions/allProducts.php';
         break;
+    case 'menu':
+        $page = 'public/menu.php';
+        $style = 'menu.css';
+        break;
+    case 'itemPage':
+        $page = 'public/itempage.php';
+        $style = 'itempage.css';
+        break;
     default:
         $page = '404.php';
         $style = '404.css';

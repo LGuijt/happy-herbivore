@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?= 'views/public/assets/css/style.css' ?>">
     <?php
     if (!empty($style)) {
-        echo '<link rel="stylesheet" href="' . 'assets/css/' . $style . '">';
+        echo '<link rel="stylesheet" href="views/public/assets/css/' . $style . '">';
     }
     ?>
     <script src="<?= 'views/public/assets/js/app.js' ?>" defer></script>

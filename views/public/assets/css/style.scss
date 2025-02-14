@@ -6,10 +6,6 @@
     --darkBlue: #053631;
 }
 
-img{
-    max-width: 200px;
-}
-
 .dropdown-content {
     display: none;
 }
@@ -118,6 +114,8 @@ aside h2 {
     background-color: var(--green);
     width: 70vw;
     padding: 1vh 2vw;
+    display: grid;
+    grid-template-rows: 7vh 70vh;
 
     h2{
         color: var(--orange);
@@ -131,9 +129,97 @@ aside h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-start;
+    overflow-y: scroll;
 }
 
 .menu-item{
     background-color: var(--lightGreen);
-    width: 30vw;
+    width: 31vw;
+    height: 25vh;
+    padding: 2vh 1vw;
+    margin-bottom: 2vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+    width: 20vw;
+    border-radius: 8px;
+}
+
+.item-details {
+    color: var(--darkBlue);
+    h3 {
+        font-size: 1.8em;
+        margin-bottom: 1vh;
+        font-weight: bold;
+    }
+
+    p{
+        font-size: 1.3em;
+    }
+
+    .item-link{
+        background-color: var(--orange);
+        color: white;
+        padding: 1vh 2vw;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.3em;
+        cursor: pointer;
+        float: right;
+        margin-top: 1vh;
+        text-decoration: none;
+    }
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2vh;
+}
+
+.to-order{
+    background-color: var(--lightGreen);
+    color: var(--darkBlue);
+    padding: 1vh 2vw;
+    border: none;
+    border-radius: 8px;
+    font-size: 2em;
+    cursor: pointer;
+    text-decoration: none;
+    height: 4vh;
+    width: 20vw;
+    text-align: center;
+}
+
+.to-order:hover{
+    background-color: var(--orange);
+    color: white;
+}
+
+.to-payment{
+    background-color: var(--orange);
+    color: white;
+    padding: 1vh 2vw;
+    border: none;
+    border-radius: 8px;
+    font-size: 2em;
+    cursor: pointer;
+    text-decoration: none;
+    height: 4vh;
+    width: 20vw;
+    text-align: center;
+}
+
