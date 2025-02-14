@@ -1,17 +1,53 @@
 <?php include __DIR__ . '/core/header.php'; ?>
-<p>This page works as intended</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Herbivor</title>
-</head>
+
 <body>
     <div class="menu-container">
-        <aside class="sidebar">
-            <h2>Our Menu</h2>
-            <ul class="menu-list">
+        <aside class="categories">
+            <h2>Categories</h2>
+            <article class="category">
+                <img src="img/breakfast.jpg" alt="Burger">
+                <div class="category-details">
+                    <h3>Breakfast</h3>
+                    <p>Start your day with our delicious breakfast options.</p>
+                </div>
+            </article>
+            <article class="category">
+                <img src="img/lunch.jpg" alt="dinner">
+                <div class="category-details">
+                    <h3>Lunch&Dinner</h3>
+                    <p>Enjoy a hearty lunch or dinner with our tasty dishes.</p>
+                </div>
+            </article>
+            <article class="category">
+                <img src="img/sides.jpg" alt="sides">
+                <div class="category-details">
+                    <h3>Sides</h3>
+                    <p>Complete your meal with our delicious side dishes.</p>
+                </div>
+            </article>
+            <article class="category">
+                <img src="img/snacks.jpg" alt="snacks">
+                <div class="category-details">
+                    <h3>Snacks</h3>
+                    <p>Enjoy a quick snack with our tasty options.</p>
+                </div>
+            </article>
+            <article class="category">
+                <img src="img/dips.jpg" alt="dips">
+                <div class="category-details">
+                    <h3>Dips</h3>
+                    <p>Enhance your meal with our delicious dips.</p>
+                </div>
+            </article>
+            <article class="category">
+                <img src="img/drinks.jpg" alt="drinks">
+                <div class="category-details">
+                    <h3>Drinks</h3>
+                    <p>Quench your thirst with our refreshing drinks.</p>
+                </div>
+            </article>
+        </aside>
+            <!-- <ul class="menu-list">
                 <li class="menu-item">
                     <img src="img/burger.jpg" alt="Burger">
                     <div class="item-details">
@@ -44,10 +80,8 @@
                         <p>Classic pasta dish with creamy sauce.(Voorbeeld)</p>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
         </aside>
     </div>
 
-</body>
-</html>
 <?php include __DIR__ . '/core/footer.php'; ?>
