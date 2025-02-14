@@ -89,7 +89,7 @@ aside h2 {
   }
   
   .category img {
-    height: 30vh;
+    width: 100%;
     border-radius: 50%;
   }
 
@@ -113,3 +113,27 @@ aside h2 {
   .category-details p:last-child {
     margin-bottom: 0;
   }
+
+.menu {
+    background-color: var(--green);
+    width: 70vw;
+    padding: 1vh 2vw;
+
+    h2{
+        color: var(--orange);
+        font-size: 2em;
+        margin: 2vh 0;
+        border-bottom: 1px solid var(--darkBlue);
+    }
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item{
+    background-color: var(--lightGreen);
+    width: 30vw;
+}
