@@ -1,5 +1,12 @@
 <?php include __DIR__ . '/core/header.php'; ?>
 
+<?php
+$file_json = file_get_contents('assets/JSON/dummydata.json');
+$file = json_decode($file_json, true);
+$products = $file['products'];
+
+?>
+
 <body>
     <div class="menu-container">
         <aside class="categories">
@@ -47,7 +54,22 @@
                 </div>
             </article>
         </aside>
-            <!-- <ul class="menu-list">
+        <div class="menu">
+            <h2>Menu</h2>
+            <div class="menu-list">
+                <?php foreach ($products as $product) : ?>
+                    <div class="menu-item">
+                        <img src="cdn/img/products/<?= $product['product_image'] ?>.png" alt="<?= $product['product_name'] ?>">
+                        <div class="item-details">
+                            <h3><?= $product['product_name'] ?></h3>
+                            <p>$<?= $product['product_price'] ?></p>
+                            <p><?= $product['description'] ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+        </div>
+        <!-- <ul class="menu-list">
                 <li class="menu-item">
                     <img src="img/burger.jpg" alt="Burger">
                     <div class="item-details">
@@ -84,4 +106,4 @@
         </aside>
     </div>
 
-<?php include __DIR__ . '/core/footer.php'; ?>
+    <?php include __DIR__ . '/core/footer.php'; ?>
