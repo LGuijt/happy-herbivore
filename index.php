@@ -21,8 +21,8 @@ $style = '';
 $js = '';
 switch ($view) {
     case '':
-        $page = 'public/index.php';
-        $style = 'home.css';
+        $page = 'public/start.php';
+        $style = 'start.css';
         break;
     case 'admin':
         $page = 'admin/index.php';
