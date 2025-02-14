@@ -6,8 +6,6 @@ $file = json_decode($file_json, true);
 $products = $file['products'];
 
 ?>
-
-<body>
     <div class="menu-container">
         <aside class="categories">
             <h2>Categories</h2>

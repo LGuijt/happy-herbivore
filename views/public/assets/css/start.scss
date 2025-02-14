@@ -1,0 +1,32 @@
+#startVideo {
+    position: absolute;
+    width: 1080px;
+    height: auto;
+}
+
+#opacity {
+    position: absolute;
+    width: 1080px;
+    height: 1908px;
+    background-color: rgba(140, 208, 3, 0.6);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button {
+    position: absolute;
+    z-index: 3;
+    border-radius: 50px;
+    width: 500px;
+    height: 200px;
+    background-color: var(--orange);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 3px solid var(--lightOrange);
+    font-size: 50px;
+}
