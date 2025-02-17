@@ -25,7 +25,7 @@
                 <img src="./cdn/img/logo_text.png" alt="logo">
             </div>
             <div class="dropdown">
-                <div onclick="changeLanguageDrop()" class="dropbtn">EN</div>
+                <button onclick="changeLanguageDrop()" class="dropbtn">EN ▼</button>
                 <div id="myDropdown" class="dropdown-content">
                     <div onclick="changeLanguage('nl')">Nederlands</div>
                     <div onclick="changeLanguage('en')">English</div>
@@ -36,3 +36,5 @@
             </div>
         </div>
     </header>
+</body>
+</html>

@@ -14,4 +14,5 @@ $products = $file['products'];
   <source src="./cdn/vid/kioskvideo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+<script src="./assets/js/app.js"></script>
 </body>
