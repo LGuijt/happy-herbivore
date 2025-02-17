@@ -30,7 +30,7 @@ switch ($view) {
         $js = 'admin.js';
         break;
     case 'api':
-        $page = 'functions/allProducts.php';
+        $page = 'functions/index.php';
         break;
     case 'menu':
         $page = 'public/menu.php';
