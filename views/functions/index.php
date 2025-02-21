@@ -33,6 +33,20 @@
     };
 
     // apiTwo();
+
+    async function apiThree(x){
+        const res = await fetch('views/functions/singleProduct.php?sku=' + x, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const data = await res.json();
+        console.log(data);
+    };
+
+    apiThree(9);
     </script>
 
     <?php
