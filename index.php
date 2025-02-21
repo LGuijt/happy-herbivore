@@ -43,6 +43,7 @@ switch ($view) {
     case 'itempage':
         $page = 'public/itempage.php';
         $style = 'itempage.css';
+        $js = 'itempage.js';
         break;
     default:
         $page = '404.php';

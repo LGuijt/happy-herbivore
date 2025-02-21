@@ -28,15 +28,6 @@ while ($allProductsStmt->fetch()) {
         'kcal' => $kcal,
         'options' => $options
     ];
-    // echo "<div class='product'>";
-    // echo "<img src='cdn/img/products/" . $image_id . ".png' alt='product' style='width:20vh; height:20vh;'>";
-    // echo "<h3>" . $name . " " .$product_id . "</h3>";
-    // echo "<p>" . $category_id . " " . $category_name ."</p>";
-    // echo "<p>" . $description . "</p>";
-    // echo "<p>€" . $price . "</p>";
-    // echo "<p>" . $kcal . " kcal</p>";
-    // echo "<p>" . $options . "</p>";
-    // echo "</div>";
 }
 
 
@@ -48,5 +39,4 @@ $response = [
 ];
 
 echo json_encode($response);
-// $allProductsStmt->close();
 // ?>

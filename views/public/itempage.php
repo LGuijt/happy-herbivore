@@ -1,37 +1,42 @@
 <?php include __DIR__ . '/core/header.php'; ?>
 
 <?php
-$file_json = file_get_contents('assets/JSON/dummydata.json');
-$file = json_decode($file_json, true);
-$products = $file['products'];
-$current_product = 1;
-$product = $products[$current_product];
-
+if (isset($_GET['sku'])) {
+    $current_product = $_GET['sku'];
+} else {
+    $current_product = 1;
+}
 ?>
+<script>
+    let thisProduct = <?= $current_product ?>;
+</script>
 <div class="parentContainer">
     <div class="itemContainer">
         <div class="imgBox">
-            <img src="cdn/img/products/<?= $product['product_image'] ?>.png" alt="<?= $product['product_name'] ?>">
+            <img id="productImg" src="cdn/img/products/.png" alt="">
         </div>
-        <div class="itemName title"><?= $product['product_name'] ?>
+        <div class="itemName title" id="prodName">
         </div>
-        <div class="itemDescription text"><?= $product['description'] ?>
+        <div class="itemDescription text" id="prodDesc">
+        </div>
+        <div id="options-container">
+
         </div>
         <div class="amountChanger">
-            <div class="minus pick">
+            <div class="minus pick" id="minus">
                 -
             </div>
-            <div class="itemAmount big">
-                0
+            <div class="itemAmount big" id="amount">
+                1
             </div>
-            <div class="plus pick">
+            <div class="plus pick" id="plus">
                 +
             </div>
         </div>
         <div class="finalDecision">
-            <div class="price big">€<?= $product['product_price']; ?>
+            <div class="price big" id="price">
             </div>
-            <div class="addToCartButton">
+            <div class="addToCartButton" id="button">
                 ADD TO CART
             </div>
         </div>
