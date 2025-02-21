@@ -8,11 +8,33 @@ $current_product = 1;
 $product = $products[$current_product];
 
 ?>
-<div class="main">
-    <div class="container first">
-        <a href="menu">Back to menu</a>
-        <img src="cdn/img/products/<?= $product['product_image'] ?>.png" alt="<?= $product['product_name'] ?>">
-        <h1><?= $product['product_name'] ?></h1>
+<div class="parentContainer">
+    <div class="itemContainer">
+        <div class="imgBox">
+            <img src="cdn/img/products/<?= $product['product_image'] ?>.png" alt="<?= $product['product_name'] ?>">
+        </div>
+        <div class="itemName title"><?= $product['product_name'] ?>
+        </div>
+        <div class="itemDescription text"><?= $product['description'] ?>
+        </div>
+        <div class="amountChanger">
+            <div class="minus pick">
+                -
+            </div>
+            <div class="itemAmount big">
+                0
+            </div>
+            <div class="plus pick">
+                +
+            </div>
+        </div>
+        <div class="finalDecision">
+            <div class="price big">€<?= $product['product_price']; ?>
+            </div>
+            <div class="addToCartButton">
+                ADD TO CART
+            </div>
+        </div>
     </div>
 </div>
 <?php include __DIR__ . '/core/footer.php'; ?>
