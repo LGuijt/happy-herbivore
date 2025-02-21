@@ -94,6 +94,7 @@ aside {
   border-radius: 0 8px 8px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  height: 88vh;
 }
 
 aside h2 {
@@ -153,10 +154,12 @@ aside h2 {
   padding: 1vh 2vw;
   display: grid;
   grid-template-rows: 7vh 70vh;
+  height: 88vh;
+  overflow-y: scroll;
 }
 .menu h2 {
-  color: var(--orange);
-  font-size: 2em;
+  color: var(--darkBlue);
+  font-size: 3em;
   margin: 2vh 0;
   border-bottom: 1px solid var(--darkBlue);
 }
@@ -167,7 +170,6 @@ aside h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
-  overflow-y: scroll;
 }
 
 .menu-item {
@@ -207,7 +209,8 @@ aside h2 {
 .item-details p {
   font-size: 1.3em;
 }
-.item-details .item-link {
+
+.item-link {
   background-color: var(--orange);
   color: white;
   padding: 1vh 2vw;
@@ -222,9 +225,14 @@ aside h2 {
 
 /* Button styles */
 .button-container {
+  position: sticky;
+  bottom: -1vh;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 2vh;
+  align-items: center;
+  margin-bottom: -2vh;
+  background-color: var(--green);
+  height: 8vh;
 }
 
 .to-order {
