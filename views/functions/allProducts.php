@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../../core/db_connect.php';
 require_once __DIR__ . '/../../core/db_credentials.php';
 
-$produts = [];
+$products = [];
 
 $allProductsQuery = "SELECT p.product_id, p.category_id, c.name, i.file_name, n.name_en, d.description_en, p.price, p.kcal, p.options 
 FROM products p 
