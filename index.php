@@ -40,7 +40,7 @@ switch ($view) {
         $style = 'menu.css';
         $js = 'menu.js';
         break;
-    case 'itemPage':
+    case 'itempage':
         $page = 'public/itempage.php';
         $style = 'itempage.css';
         break;
