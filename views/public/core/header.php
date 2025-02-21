@@ -13,7 +13,7 @@
     <script src="<?= 'views/public/assets/js/app.js' ?>" defer></script>
     <?php
     if (!empty($js)) {
-        echo '<script src="' . 'assets/js/' . $js . '" defer></script>';
+        echo '<script src="' . 'views/public/assets/js/' . $js . '" defer></script>';
     }
     ?>
 </head>
