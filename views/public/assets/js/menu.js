@@ -68,7 +68,7 @@ function fillProd(data) {
       prod.appendChild(addimg(img));
       prod.appendChild(setDetails("product", catName, 0, price));
       const link = document.createElement("a");
-        link.href = "itempage?sku" + id;
+        link.href = "itempage?sku=" + id;
         link.classList.add("item-link");
         link.textContent = "Add to cart";
         prod.appendChild(link);
