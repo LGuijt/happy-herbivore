@@ -36,7 +36,7 @@ if (isset($_GET['sku'])) {
         <div class="finalDecision">
             <div class="price big" id="price">
             </div>
-            <div class="addToCartButton" id="button">
+            <div class="addToCartButton" id="addToCart">
                 ADD TO CART
             </div>
         </div>
