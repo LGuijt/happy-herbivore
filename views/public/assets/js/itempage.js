@@ -2,6 +2,35 @@ console.log("itempage.js loaded");
 itemamount = 1;
 itemPrice = 0;
 fullPrice = 0;
+newProduct = true;
+currentOption = null;
+
+// let orderArray = [
+//     {
+//         "product_id": 1,
+//         "options": null,
+//         "amount": 1
+//     }
+// ]
+
+// let myArray = JSON.stringify(orderArray);
+// localStorage.setItem("order", myArray);
+// let currentOrder = localStorage.getItem("order");
+// currentOrder = JSON.parse(currentOrder);
+// console.log(currentOrder);
+// currentOrder.push({
+//     "product_id": 1,
+//     "options": null,
+//     "amount": 1
+// });
+// let myArray = JSON.stringify(currentOrder);
+// localStorage.setItem("order", myArray);
+let currentOrder = localStorage.getItem("order");
+currentOrder = JSON.parse(currentOrder);
+console.log(currentOrder);
+// currentOrder = [];
+// let myArray = JSON.stringify(currentOrder);
+// localStorage.setItem("order", myArray);
 
 async function apiThree(x) {
   const res = await fetch("views/functions/singleProduct.php?sku=" + x, {
@@ -17,6 +46,20 @@ async function apiThree(x) {
 }
 
 apiThree(thisProduct);
+
+let fullOrder = localStorage.getItem("order");
+fullOrder = JSON.parse(fullOrder);
+
+if (fullOrder !== null) {
+  for (let i = 0; i < fullOrder.length; i++) {
+    if (fullOrder[i].product_id === thisProduct) {
+      itemamount = fullOrder[i].amount;
+      document.getElementById("amount").innerHTML = itemamount;
+      newProduct = false;
+      currentOption = fullOrder[i].options;
+    }
+  }
+}
 
 function fillPage(data) {
   prod = data.product;
@@ -50,9 +93,19 @@ function fillOptions(data) {
     radio.name = "options";
     radio.value = data[i].option_id;
     radio.id = "option" + data[i].option_id;
-    if (i === 0) {
-      radio.checked = true;
+    if (newProduct) {
+      if (i === 0) {
+        radio.checked = true;
+      }
+    } else if (!newProduct) {
+      if (data[i].option_id === currentOption) {
+        radio.checked = true;
+      }
     }
+    radio.addEventListener("click", function () {
+        currentOption = data[i].option_id;
+    });
+
     options.appendChild(radio);
 
     const label = document.createElement("label");
@@ -91,11 +144,31 @@ document.getElementById("minus").addEventListener("click", function () {
   document.getElementById("amount").innerHTML = itemamount;
 });
 
-document.getElementById("button").addEventListener("click", function () {
+document.getElementById("addToCart").addEventListener("click", function () {
   if (itemamount > 0) {
-    console.log("add to cart");
-    console.log(itemamount);
-    console.log(thisProduct);
-    console.log(fullPrice);
+    addToOrder();
   }
 });
+
+function addToOrder() {
+  if (newProduct) {
+    fullOrder.push({
+      product_id: thisProduct,
+      options: currentOption,
+      amount: itemamount,
+      price: itemPrice,
+    });
+  } else {
+    for (let i = 0; i < fullOrder.length; i++) {
+      if (fullOrder[i].product_id === thisProduct) {
+        fullOrder[i].amount = itemamount;
+        fullOrder[i].price = itemPrice;
+        fullOrder[i].options = currentOption;
+      }
+    }
+  }
+
+  let myArray = JSON.stringify(fullOrder);
+  localStorage.setItem("order", myArray);
+  window.location.href = "menu";
+}
