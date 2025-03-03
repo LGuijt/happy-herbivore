@@ -6,6 +6,11 @@
   --darkBlue: #053631;
 }
 
+@font-face{
+  font-family: roughReno;
+  src: url('assets/css/fonts/renos-rough.ttf')
+}
+
 /* Dropdown styles */
 .dropdown {
   position: relative;
@@ -85,6 +90,7 @@
 
 /* Menu Layout */
 .menu-container {
+  // font-family: roughReno;
   display: flex;
 }
 
