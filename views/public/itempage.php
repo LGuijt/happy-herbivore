@@ -19,8 +19,8 @@ if (isset($_GET['sku'])) {
         </div>
         <div class="itemDescription text" id="prodDesc">
         </div>
-        <div id="options-container">
-
+        <div class="optionsContainer" id="optionsContainer">
+            
         </div>
         <div class="amountChanger">
             <div class="minus pick" id="minus">
