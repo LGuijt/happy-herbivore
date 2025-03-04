@@ -45,6 +45,11 @@ switch ($view) {
         $style = 'itempage.css';
         $js = 'itempage.js';
         break;
+    case 'payment':
+        $page = 'public/payment.php';
+        $style = 'payment.css';
+        $js = 'payment.js';
+        break;
     default:
         $page = '404.php';
         $style = '404.css';
