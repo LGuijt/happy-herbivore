@@ -86,7 +86,7 @@ function fillPage(data) {
 
 function fillOptions(data) {
   console.log(data);
-  const options = document.getElementById("options-container");
+  const options = document.getElementById("optionsContainer");
   for (let i = 0; i < data.length; i++) {
     const radio = document.createElement("input");
     radio.type = "radio";
