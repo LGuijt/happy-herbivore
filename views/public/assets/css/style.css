@@ -18,6 +18,10 @@
   --darkBlue: #053631;
 }
 
+*{
+  font-style: renosRough;
+}
+
 /* Dropdown styles */
 .dropdown {
   position: relative;
