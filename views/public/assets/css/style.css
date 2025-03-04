@@ -1,3 +1,15 @@
+@font-face {
+  font-family: renosRough;
+  src: url(./fonts/renos-rough-webfont.woff2) format("woff2"), url(./fonts/renos-rough-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: notoSans;
+  src: url(./fonts/static/NotoSans-Medium.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --orange: #ff7520;
   --lightOrange: #ffb181;
