@@ -27,9 +27,11 @@
         height: auto;
     }
 }
+
 .title {
     font-size: 4rem;
 }
+
 .text {
     font-size: 2rem;
 }
@@ -93,14 +95,6 @@
     color: var(--orange);
 }
 
-.optionsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 70vw;
-}
 
 label img {
     object-fit: contain;
@@ -111,3 +105,27 @@ label {
     display: flex;
     flex-direction: row;
 }
+
+
+.optionsContainer {
+    display: flex;
+    flex-direction: column; // Ensures it stacks properly
+    align-items: center; // Centers it under the button
+    width: 100%; // Prevents overflow issues
+    margin-top: 1.5vh; // Adds a slight gap
+}
+
+#sauceOptions {
+    width: 90%; // Adapts better to a vertical screen
+    max-width: 250px; // Prevents excessive width
+    height: 50px; // Ensures good touch usability
+    font-size: 1.5rem;
+    text-align: center;
+    border: 3px solid var(--orange);
+    border-radius: 12px;
+    background-color: white;
+    margin-top: 0.5vh; // Keeps it close to the button
+    cursor: pointer;
+    position: relative; // Prevents shifting issues
+}
+

@@ -5,33 +5,9 @@ fullPrice = 0;
 newProduct = true;
 currentOption = null;
 
-// let orderArray = [
-//     {
-//         "product_id": 1,
-//         "options": null,
-//         "amount": 1
-//     }
-// ]
-
-// let myArray = JSON.stringify(orderArray);
-// localStorage.setItem("order", myArray);
-// let currentOrder = localStorage.getItem("order");
-// currentOrder = JSON.parse(currentOrder);
-// console.log(currentOrder);
-// currentOrder.push({
-//     "product_id": 1,
-//     "options": null,
-//     "amount": 1
-// });
-// let myArray = JSON.stringify(currentOrder);
-// localStorage.setItem("order", myArray);
 let currentOrder = localStorage.getItem("order");
 currentOrder = JSON.parse(currentOrder);
 console.log(currentOrder);
-// currentOrder = [];
-// let myArray = JSON.stringify(currentOrder);
-// localStorage.setItem("order", myArray);
-
 async function apiThree(x) {
   const res = await fetch("views/functions/singleProduct.php?sku=" + x, {
     method: "GET",
@@ -64,6 +40,7 @@ if (fullOrder !== null) {
 function fillPage(data) {
   prod = data.product;
   console.log(prod);
+
   img = document.getElementById("productImg");
   img.src = "cdn/img/products/" + prod.image_id + ".png";
   img.alt = data.name;
@@ -87,43 +64,31 @@ function fillPage(data) {
 function fillOptions(data) {
   console.log(data);
   const options = document.getElementById("optionsContainer");
+  options.innerHTML = "";
+
+  const select = document.createElement("select");
+  select.id = "sauceOptions";
+  
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "none";
+  defaultOption.textContent = "None";
+  select.appendChild(defaultOption);
+  
   for (let i = 0; i < data.length; i++) {
-    const radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "options";
-    radio.value = data[i].option_id;
-    radio.id = "option" + data[i].option_id;
-    if (newProduct) {
-      if (i === 0) {
-        radio.checked = true;
-      }
-    } else if (!newProduct) {
-      if (data[i].option_id === currentOption) {
-        radio.checked = true;
-      }
+    const option = document.createElement("option");
+    option.value = data[i].option_id;
+    option.textContent = data[i].option_name;
+    if (!newProduct && data[i].option_id === currentOption) {
+      option.selected = true;
     }
-    radio.addEventListener("click", function () {
-        currentOption = data[i].option_id;
-    });
-
-    options.appendChild(radio);
-
-    const label = document.createElement("label");
-    label.htmlFor = "option" + data[i].option_id;
-
-    if (data[i].option_image !== null) {
-      const img = document.createElement("img");
-      img.src = "cdn/img/products/" + data[i].option_image + ".png";
-      img.alt = data[i].option_name;
-      label.appendChild(img);
-    }
-
-    const span = document.createElement("span");
-    span.textContent = data[i].option_name;
-    label.appendChild(span);
-
-    options.appendChild(label);
+    select.appendChild(option);
   }
+
+  select.addEventListener("change", function () {
+    currentOption = select.value;
+  });
+
+  options.appendChild(select);
 }
 
 document.getElementById("plus").addEventListener("click", function () {
