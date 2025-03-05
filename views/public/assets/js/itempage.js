@@ -40,7 +40,6 @@ if (fullOrder !== null) {
 function fillPage(data) {
   prod = data.product;
   console.log(prod);
-
   img = document.getElementById("productImg");
   img.src = "cdn/img/products/" + prod.image_id + ".png";
   img.alt = data.name;
@@ -64,31 +63,53 @@ function fillPage(data) {
 function fillOptions(data) {
   console.log(data);
   const options = document.getElementById("optionsContainer");
-  options.innerHTML = "";
-
-  const select = document.createElement("select");
-  select.id = "sauceOptions";
-  
-  const defaultOption = document.createElement("option");
-  defaultOption.value = "none";
-  defaultOption.textContent = "None";
-  select.appendChild(defaultOption);
-  
   for (let i = 0; i < data.length; i++) {
-    const option = document.createElement("option");
-    option.value = data[i].option_id;
-    option.textContent = data[i].option_name;
-    if (!newProduct && data[i].option_id === currentOption) {
-      option.selected = true;
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "options";
+    radio.value = data[i].option_id;
+    radio.id = "option" + data[i].option_id;
+    const label = document.createElement("label");
+    label.htmlFor = "option" + data[i].option_id;
+    if (newProduct) {
+      if (i === 0) {
+        radio.checked = true;
+      }
+    } else if (!newProduct) {
+      if (data[i].option_id === currentOption) {
+        radio.checked = true;
+      }
     }
-    select.appendChild(option);
+  radio.addEventListener("click", function () {
+    currentOption = data[i].option_id;
+
+    // Remove 'trueCheck' class from all radio buttons first
+    document.querySelectorAll('label').forEach((el) => {
+        el.classList.remove('trueCheck');
+    });
+
+    // Add 'trueCheck' class to the selected radio button
+    label.classList.add('trueCheck');
+});
+
+    
+
+    options.appendChild(radio);
+
+
+    if (data[i].option_image !== null) {
+      // const img = document.createElement("img");
+      // img.src = "cdn/img/products/" + data[i].option_image + ".png";
+      // img.alt = data[i].option_name;
+      // label.appendChild(img);
+    }
+
+    const span = document.createElement("span");
+    span.textContent = data[i].option_name;
+    label.appendChild(span);
+
+    options.appendChild(label);
   }
-
-  select.addEventListener("change", function () {
-    currentOption = select.value;
-  });
-
-  options.appendChild(select);
 }
 
 document.getElementById("plus").addEventListener("click", function () {

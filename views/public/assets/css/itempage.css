@@ -100,28 +100,23 @@ label img {
 }
 
 label {
+  font-size: 3rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+input {
+  display: none;
 }
 
 .optionsContainer {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
   margin-top: 1.5vh;
 }
 
-#sauceOptions {
-  width: 90%;
-  max-width: 250px;
-  height: 50px;
-  font-size: 1.5rem;
-  text-align: center;
-  border: 3px solid var(--orange);
-  border-radius: 12px;
-  background-color: white;
-  margin-top: 0.5vh;
-  cursor: pointer;
-  position: relative;
+.trueCheck {
+  border-bottom: 3px solid red;
 }/*# sourceMappingURL=itempage.css.map */
