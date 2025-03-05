@@ -9,6 +9,11 @@ let currentOrder = localStorage.getItem("order");
 currentOrder = JSON.parse(currentOrder);
 console.log(currentOrder);
 
+let orderArray = [ ];
+
+let myArray = JSON.stringify(orderArray);
+localStorage.setItem("order", myArray); 
+
 async function apiThree(x) {
   const res = await fetch("views/functions/singleProduct.php?sku=" + x, {
     method: "GET",
