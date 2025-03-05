@@ -28,10 +28,12 @@
 
 .title {
   font-size: 4rem;
+  text-align: center;
 }
 
 .text {
   font-size: 2rem;
+  text-align: center;
 }
 
 .amountChanger {
@@ -93,15 +95,6 @@
   color: var(--orange);
 }
 
-.optionsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 70vw;
-}
-
 label img {
   -o-object-fit: contain;
      object-fit: contain;
@@ -109,6 +102,23 @@ label img {
 }
 
 label {
+  font-size: 3rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+input {
+  display: none;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5vh;
+}
+
+.trueCheck {
+  border-bottom: 3px solid red;
 }/*# sourceMappingURL=itempage.css.map */
