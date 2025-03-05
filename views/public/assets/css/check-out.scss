@@ -1,113 +1,52 @@
-.parentContainer {
-    background-color: var(--green);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3vh 0 3vh 0;
-    min-height: 1700px;
-}
-
-.itemContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.checkout-container {
     background-color: white;
-    border: 10px solid var(--orange);
-    width: 70vw;
-    padding: 25px;
-}
-
-.imgBox {
-    img {
-        border-radius: 50%;
-        border: 5px solid var(--orange);
-        max-width: 40vw;
-        height: auto;
-    }
-}
-.title {
-    font-size: 4rem;
-}
-.text {
-    font-size: 2rem;
-}
-
-.amountChanger {
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    align-items: center;
-}
-
-.finalDecision {
-    width: 60vw;
-    margin-top: 10vh;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.pick {
-    font-size: 4em;
-}
-
-.minus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 15vw;
-    border-radius: 50%;
-    background-color: var(--lightOrange);
-}
-
-.plus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 15vw;
-    border-radius: 50%;
-    background-color: var(--lightOrange);
-}
-
-.big {
-    font-size: 4rem;
-    font-weight: bold;
-}
-
-.addToCartButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: 7px solid var(--orange);
-    border-radius: 20px;
-    font-size: 2.5rem;
+    border-radius: 10px;
     padding: 20px;
-    font-weight: bold;
-    color: var(--orange);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
 }
 
-.optionsContainer {
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.product-details {
+    margin-bottom: 20px;
+}
+
+.product-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+#qrcode {
+    margin: 20px 0;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 70vw;
 }
 
-label img {
-    object-fit: contain;
-    max-width: 20vw;
+.payment-message {
+    font-size: 14px;
+    color: #777;
 }
 
-label {
-    display: flex;
-    flex-direction: row;
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

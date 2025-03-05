@@ -1,6 +1,5 @@
 <?php include __DIR__ . '/core/header.php'; ?>
 
-<body>
     <div class="checkout-container">
         <h1>Kiosk Checkout</h1>
         <div class="product-details">
@@ -17,11 +16,9 @@
         </div>
 
         <div class="button-container">
-            <button onclick="completeCheckout()">Complete Checkout</button>
+            <button onclick="completeCheckout(https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js)">Complete Checkout</button>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
-</body>
-
 
