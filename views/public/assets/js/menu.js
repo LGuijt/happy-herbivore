@@ -8,7 +8,6 @@ async function catApi() {
 
   const data = await res.json();
   neededData = data.data.categories;
-  console.log(neededData);
   fillCat(neededData);
 }
 
@@ -22,7 +21,6 @@ async function prodApi() {
 
   const data = await res.json();
   neededData = data.data.products;
-  console.log(neededData);
   fillProd(neededData);
 }
 

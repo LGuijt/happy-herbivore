@@ -8,6 +8,7 @@ currentOption = null;
 let currentOrder = localStorage.getItem("order");
 currentOrder = JSON.parse(currentOrder);
 console.log(currentOrder);
+
 async function apiThree(x) {
   const res = await fetch("views/functions/singleProduct.php?sku=" + x, {
     method: "GET",
@@ -67,6 +68,7 @@ function fillOptions(data) {
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = "options";
+    radio.classList.add("hidden");
     radio.value = data[i].option_id;
     radio.id = "option" + data[i].option_id;
     const label = document.createElement("label");
@@ -80,12 +82,14 @@ function fillOptions(data) {
         radio.checked = true;
       }
     }
+
   radio.addEventListener("click", function () {
     currentOption = data[i].option_id;
 
     // Remove 'trueCheck' class from all radio buttons first
     document.querySelectorAll('label').forEach((el) => {
         el.classList.remove('trueCheck');
+
     });
 
     // Add 'trueCheck' class to the selected radio button
