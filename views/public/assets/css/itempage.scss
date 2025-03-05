@@ -27,11 +27,15 @@
         height: auto;
     }
 }
+
 .title {
     font-size: 4rem;
+    text-align: center;
 }
+
 .text {
     font-size: 2rem;
+    text-align: center;
 }
 
 .amountChanger {
@@ -93,21 +97,29 @@
     color: var(--orange);
 }
 
-.optionsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 70vw;
-}
-
 label img {
     object-fit: contain;
     max-width: 20vw;
 }
 
 label {
+    font-size: 3rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+input {
+    display: none;
+}
+
+.optionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; // Centers it under the button
+    width: 100%; // Prevents overflow issues
+    margin-top: 1.5vh; // Adds a slight gap
+}
+
+.trueCheck {
+    border-bottom: 3px solid red;
 }

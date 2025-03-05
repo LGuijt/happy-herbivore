@@ -8,7 +8,6 @@ async function catApi() {
 
   const data = await res.json();
   neededData = data.data.categories;
-  console.log(neededData);
   fillCat(neededData);
 }
 
@@ -22,7 +21,6 @@ async function prodApi() {
 
   const data = await res.json();
   neededData = data.data.products;
-  console.log(neededData);
   fillProd(neededData);
 }
 
@@ -81,6 +79,14 @@ function fillProd(data) {
 
 function changeCat(id) {
   console.log(id);
+  const sectionHeaders = document.querySelectorAll(".menu h2");
+
+  if (id >= 1 && id <= 6) {
+    sectionHeaders[id - 1].scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
 }
 
 function addimg(img) {
