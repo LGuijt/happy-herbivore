@@ -20,9 +20,11 @@
 <body>
     <header>
         <div class="headerContainer">
-            <div>
+            <div> 
+            <a href="./menu">
                 <img src="./cdn/img/logo_dino.png" alt="logo">
                 <img src="./cdn/img/logo_text.png" alt="logo">
+            </a>
             </div>
             <div class="dropdown">
                 <button onclick="changeLanguageDrop()" class="dropbtn">EN ▼</button>
