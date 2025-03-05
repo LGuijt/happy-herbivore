@@ -3,6 +3,7 @@
 <div class="parentContainer">
     <div class="orderContainer">
         <div class="productContainer" id="productContainer">
+                </div>
         </div>
         <hr>
         <div class="totalContainer">

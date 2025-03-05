@@ -1,14 +1,27 @@
+
+@font-face {
+  font-family: renosRough;
+  src: url(./fonts/renos-rough-webfont.woff2) format('woff2'),
+       url(./fonts/renos-rough-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: notoSans;
+  src: url(./fonts/static/NotoSans-Medium.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 :root {
   --orange: #ff7520;
   --lightOrange: #ffb181;
   --green: #8cd003;
   --lightGreen: #deff78;
   --darkBlue: #053631;
-}
-
-@font-face{
-  font-family: roughReno;
-  src: url('assets/css/fonts/renos-rough.ttf')
 }
 
 /* Dropdown styles */
@@ -73,6 +86,7 @@
 .headerContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   img {
       max-width: 20vw;
@@ -90,7 +104,6 @@
 
 /* Menu Layout */
 .menu-container {
-  // font-family: roughReno;
   display: flex;
 }
 
