@@ -30,8 +30,8 @@ $products = $file['products'];
         <div class="menu-list" id="menu-list6">
         </div>
         <div class="button-container">
-            <a class="to-order" href="check-out">CART</a>
-            <a class="to-payment" href="payment">PAY</a>
+            <a class="to-order" href="payment">CART</a>
+            <a class="to-payment" href="check-out">PAY</a>
         </div>
     </div>
 </div>
