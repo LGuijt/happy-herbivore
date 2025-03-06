@@ -71,6 +71,8 @@ function fillOptions(data) {
     radio.classList.add("hidden");
     radio.value = data[i].option_id;
     radio.id = "option" + data[i].option_id;
+    const label = document.createElement("label");
+    label.htmlFor = "option" + data[i].option_id;
     if (newProduct) {
       if (i === 0) {
         radio.checked = true;
@@ -80,21 +82,30 @@ function fillOptions(data) {
         radio.checked = true;
       }
     }
-    radio.addEventListener("click", function () {
-        currentOption = data[i].option_id;
+
+  radio.addEventListener("click", function () {
+    currentOption = data[i].option_id;
+
+    // Remove 'trueCheck' class from all radio buttons first
+    document.querySelectorAll('label').forEach((el) => {
+        el.classList.remove('trueCheck');
 
     });
 
+    // Add 'trueCheck' class to the selected radio button
+    label.classList.add('trueCheck');
+});
+
+    
+
     options.appendChild(radio);
 
-    const label = document.createElement("label");
-    label.htmlFor = "option" + data[i].option_id;
 
     if (data[i].option_image !== null) {
-      const img = document.createElement("img");
-      img.src = "cdn/img/products/" + data[i].option_image + ".png";
-      img.alt = data[i].option_name;
-      label.appendChild(img);
+      // const img = document.createElement("img");
+      // img.src = "cdn/img/products/" + data[i].option_image + ".png";
+      // img.alt = data[i].option_name;
+      // label.appendChild(img);
     }
 
     const span = document.createElement("span");
