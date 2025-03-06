@@ -2,6 +2,10 @@ let order = localStorage.getItem("order");
 order = JSON.parse(order);
 orderPrice = 0;
 amounts = [];
+let lang = localStorage.getItem("lang");
+if (lang === null) {
+    lang = "en";
+}
 
 let productContainer = document.getElementById("productContainer");
 
@@ -10,7 +14,7 @@ if (order !== null) {
 }
 
 async function apiFour(x, y){
-    const res = await fetch("views/functions/singleProduct.php?sku=" + x,{
+    const res = await fetch("views/functions/singleProduct.php?sku=" + x + "&lang=" + lang,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
