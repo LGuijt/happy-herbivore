@@ -1,0 +1,52 @@
+.checkout-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.product-details {
+    margin-bottom: 20px;
+}
+
+.product-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+#qrcode {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-message {
+    font-size: 14px;
+    color: #777;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

@@ -144,16 +144,17 @@ aside h2 {
 }
 
 .category-details h3 {
-  font-size: 1.5em;
+  font-family: renosRough;
+  font-size: 1.4em;
   margin-bottom: 1vh;
   color: var(--darkBlue);
 }
 
 .category-details p {
-  font-size: 1.1em;
+  font-size: 1.4em;
   color: var(--darkBlue);
   margin-bottom: 1vh;
-  font-style: italic;
+  font-family: notoSans;
 }
 
 .category-details p:last-child {

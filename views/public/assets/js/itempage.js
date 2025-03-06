@@ -5,17 +5,22 @@ fullPrice = 0;
 newProduct = true;
 currentOption = null;
 
+let lang = localStorage.getItem("lang");
+if (lang === null) {
+  lang = "en";
+}
+
 let currentOrder = localStorage.getItem("order");
 currentOrder = JSON.parse(currentOrder);
 console.log(currentOrder);
 
-let orderArray = [ ];
+// let orderArray = [ ];
 
-let myArray = JSON.stringify(orderArray);
-localStorage.setItem("order", myArray); 
+// let myArray = JSON.stringify(orderArray);
+// localStorage.setItem("order", myArray); 
 
 async function apiThree(x) {
-  const res = await fetch("views/functions/singleProduct.php?sku=" + x, {
+  const res = await fetch("views/functions/singleProduct.php?sku=" + x + "&lang=" + lang, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

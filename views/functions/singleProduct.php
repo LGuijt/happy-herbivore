@@ -10,6 +10,13 @@ if (isset($_GET['sku'])){
     $productId = 1;
 }
 
+if (isset($_GET['lang'])){
+    $lang = $_GET['lang'];
+} else {
+    $lang = 'en';
+}
+
+if ($lang === "en"){
 $productQuery = "SELECT p.product_id, p.category_id, c.name, i.file_name, n.name_en, d.description_en, p.price, p.kcal, p.options
 FROM products p
 JOIN categories c ON p.category_id = c.category_id
@@ -17,6 +24,43 @@ JOIN images i ON p.image_id = i.image_id
 JOIN product_name n ON p.name_id = n.id
 JOIN product_description d ON p.description_id = d.id
 WHERE p.product_id = ?";
+} else if ($lang === "nl"){
+$productQuery = "SELECT p.product_id, p.category_id, c.name, i.file_name, n.name_nl, d.description_nl, p.price, p.kcal, p.options
+FROM products p
+JOIN categories c ON p.category_id = c.category_id
+JOIN images i ON p.image_id = i.image_id
+JOIN product_name n ON p.name_id = n.id
+JOIN product_description d ON p.description_id = d.id
+WHERE p.product_id = ?";
+} else if ($lang === "de"){
+$productQuery = "SELECT p.product_id, p.category_id, c.name, i.file_name, n.name_de, d.description_de, p.price, p.kcal, p.options
+FROM products p
+JOIN categories c ON p.category_id = c.category_id
+JOIN images i ON p.image_id = i.image_id
+JOIN product_name n ON p.name_id = n.id
+JOIN product_description d ON p.description_id = d.id
+WHERE p.product_id = ?";
+} else if ($lang === "fr"){
+$productQuery = "SELECT p.product_id, p.category_id, c.name, i.file_name, n.name_fr, d.description_fr, p.price, p.kcal, p.options
+FROM products p
+JOIN categories c ON p.category_id = c.category_id
+JOIN images i ON p.image_id = i.image_id
+JOIN product_name n ON p.name_id = n.id
+JOIN product_description d ON p.description_id = d.id
+WHERE p.product_id = ?";
+} else if ($lang === "jp"){
+$productQuery = "SELECT p.product_id, p.category_id, c.name, i.file_name, n.name_jp, d.description_jp, p.price, p.kcal, p.options
+FROM products p
+JOIN categories c ON p.category_id = c.category_id
+JOIN images i ON p.image_id = i.image_id
+JOIN product_name n ON p.name_id = n.id
+JOIN product_description d ON p.description_id = d.id
+WHERE p.product_id = ?";
+}
+
+
+
+
 $productStmt = $con->prepare($productQuery);
 $productStmt->bind_param('i', $productId);
 $productStmt->bind_result($product_id, $category_id, $category
