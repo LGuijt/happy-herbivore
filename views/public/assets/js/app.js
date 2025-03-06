@@ -49,6 +49,8 @@ if (button) {
 }
 
 function startUp() {
+  myOrder = [];
+  localStorage.setItem("order", JSON.stringify(myOrder));
     if (!localStorage.getItem("lang")) {
         localStorage.setItem("lang", "en");
     }

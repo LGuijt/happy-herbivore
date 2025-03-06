@@ -38,29 +38,118 @@ document.addEventListener('DOMContentLoaded', function() {
           );
       }
   };
-
-  // Function to add items to the items box
-  window.addItem = function(itemName, itemPrice) {
-      const itemsBox = document.getElementById('itemsBox');
-      const itemDiv = document.createElement('div');
-      itemDiv.classList.add('item');
-
-      itemDiv.innerHTML = `
-          <div class="item-name">${itemName}</div>
-          <div class="item-price">$${itemPrice}</div>
-          <button class="remove-item" onclick="removeItem(this)">Remove</button>
-      `;
-
-      itemsBox.appendChild(itemDiv);
-  };
-
-  // Function to remove an item from the box
-  window.removeItem = function(button) {
-      const itemDiv = button.parentElement;
-      itemDiv.remove();
-  };
-
-  // Add two items as a demonstration
-  addItem('Bottle of Water', 2.99);
-  addItem('Shampoo', 5.49);
 });
+
+let order = JSON.parse(localStorage.getItem("order"));
+orderPrice = 0;
+let amounts = 0;
+let lang = localStorage.getItem("lang");
+if (lang === null){
+    lang = "en";
+}
+
+let itemsBox = document.getElementById("items-box");
+
+if (order !== null){
+    console.log(order);
+}
+
+async function apiFour(id, i){
+    const res = await fetch("views/functions/singleProduct.php?sku=" + id + "&lang=" + lang,{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    const data = await res.json();
+    fillList(data.data, i);
+}
+
+for (let i = 0; i < order.length; i++){
+    apiFour(order[i].product_id, i);
+}
+
+function fillList(data, i){
+    console.log(data);
+    let itemInfo = data.product;
+    let options = data.options;
+    console.log(order[i]);
+    let item = document.createElement("div");
+    item.classList.add("item");
+
+    let itemAmount = document.createElement("div");
+    itemAmount.classList.add("itemAmount");
+    itemAmount.classList.add("big");
+    itemAmount.innerHTML = order[i].amount;
+    item.appendChild(itemAmount);
+    amounts += order[i].amount;
+
+    let itemRest = document.createElement("div");
+    itemRest.classList.add("itemRest");
+    let itemTitle = document.createElement("div");
+    itemTitle.classList.add("itemTitle");
+    itemTitle.classList.add("big");
+    itemTitle.innerHTML = itemInfo.name;
+    itemRest.appendChild(itemTitle);
+
+    if (order[i].options !== null){
+        let extra = document.createElement("div");
+        extra.classList.add("extra");
+        for (let j = 0; j < options.length; j++){
+            if (options[j].option_id === order[i].options){
+                extra.innerHTML = options[j].option_name;
+            }
+        }
+        itemRest.appendChild(extra);
+    }
+
+    item.appendChild(itemRest);
+
+    let itemPrice = document.createElement("div");
+    itemPrice.classList.add("price");
+    itemPrice.classList.add("big");
+    itemPrice.id = "price";
+    let fullPrice = order[i].price * order[i].amount;
+    let formattedPrice = fullPrice.toFixed(2);
+    itemPrice.innerHTML = "&euro;" + formattedPrice;
+    item.appendChild(itemPrice);
+
+    itemsBox.appendChild(item);
+    orderPrice += fullPrice;
+    updatePrice();
+}
+
+function updatePrice(){
+    let price = document.getElementById("price");
+    let formattedPrice = orderPrice.toFixed(2);
+    price.innerHTML = "&euro;" + formattedPrice;
+}
+
+document.getElementById("card-button").addEventListener("click", function(){
+    completeOrder();
+    // window.location.href = "index";
+}
+);
+
+async function completeOrder(){
+    let order = JSON.parse(localStorage.getItem("order"));
+    let currentOrder = localStorage.getItem("currentOrder");
+    let thisDay = localStorage.getItem("currentDay");
+    let orderInfo = {
+        order: order,
+        price: orderPrice,
+        amount: amounts,
+        orderNumber: currentOrder,
+        day: thisDay,
+    };
+
+    const res = await fetch("views/functions/completeOrder.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderInfo),
+    });
+    const data = await res.json();
+    console.log(data);
+}
