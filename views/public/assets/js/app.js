@@ -1,4 +1,6 @@
 // Toggle dropdown menu with smooth animation
+// localStorage.setItem("lang", "en");
+
 function changeLanguageDrop() {
     let dropdown = document.getElementById("myDropdown");
     let btn = document.querySelector(".dropbtn");
@@ -17,6 +19,8 @@ function changeLanguageDrop() {
 // Change language function
 function changeLanguage(lang) {
     console.log(`Selected language: ${lang}`);
+    localStorage.setItem("lang", lang);
+    location.reload();
 }
 
 // Close dropdown when clicking outside
