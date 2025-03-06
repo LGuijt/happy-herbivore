@@ -15,7 +15,7 @@
                 Cancel Order
             </div>
             <div class="checkoutButton">
-                CHECK OUT
+            <a href="./views/public/check-out.php">CHECK OUT</a>
             </div>
         </div>
     </div>
