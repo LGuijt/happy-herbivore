@@ -4,20 +4,20 @@
     <div class="orderContainer">
         <div class="productContainer" id="productContainer">
         </div>
-    <hr>
-    <div class="totalContainer">
-        <p class="big">Total</p>
-        <p class="big" id="priceContainer"></p>
-    </div>
-    
-    <div class="checkoutContainer">
-        <div class="cancelOrderButton">
-            Cancel Order
+        <hr>
+        <div class="totalContainer">
+            <p class="big">Total</p>
+            <p class="big" id="priceContainer"></p>
         </div>
-        <div class="checkoutButton">
-            <a href="check-out">CHECK OUT</a>
+
+        <div class="checkoutContainer">
+            <div class="cancelOrderButton" id="button">
+                Cancel Order
+            </div>
+            <div class="checkoutButton">
+                <a href="check-out">CHECK OUT</a>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 </div>

@@ -1,24 +1,28 @@
 <?php include __DIR__ . '/core/header.php'; ?>
 
+<div class="parent-container">
     <div class="checkout-container">
-        <h1>Kiosk Checkout</h1>
-        <div class="product-details">
-            <p><strong>Product:</strong> Amazing Item</p>
-            <p><strong>Price:</strong> $50.00</p>
+        <div class="items-box" id="items-box">
+            <!-- Items gaan hier <Kijk bij Javascript for meer details> -->
+        </div>
+        <hr>
+        <div class="totalContainer">
+            <p class="big">Total</p>
+            <p class="big" id="priceContainer"></p>
+        </div>
+        <div class="payment-options">
+            <button class="payment-btn" onclick="showQR()">
+                QR Code
+            </button>
+            <button class="payment-btn" id="card-button">
+                Card
+            </button>
         </div>
 
-        <h2>Pay via QR Code</h2>
-
-        <div id="qrcode"></div>
-
-        <div class="payment-message">
-            <p>Scan the QR code with your mobile device to complete the payment.</p>
+        <div class="qr-section" id="qrSection">
+            <div class="qr-instructions">Scan this code with your phone camera</div>
+            <div id="qr-code"></div>
         </div>
 
-        <div class="button-container">
-            <button onclick="completeCheckout(https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js)">Complete Checkout</button>
-        </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
-
+</div>
