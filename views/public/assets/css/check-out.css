@@ -53,6 +53,7 @@
   align-items: center;
 }
 
+
 .payment-options {
   display: flex;
   flex-direction: row;
@@ -91,4 +92,5 @@ hr {
 
 .qr-instructions {
   font-size: 2rem;
+
 }/*# sourceMappingURL=check-out.css.map */
