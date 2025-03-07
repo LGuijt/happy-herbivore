@@ -22,11 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $orderStmt->close();
 
     for ($i = 0; $i < count($order); $i++) {
-        $productQuery = "INSERT INTO order_products (order_id, product_id) VALUES (?, ?)";
+        for ($j = 0; $j < $order[$i]["amount"]; $j++){
+        $productQuery = "INSERT INTO order_products (order_id, product_id, price) VALUES (?, ?, ?)";
         $productStmt = $con->prepare($productQuery);
-        $productStmt->bind_param('ii', $id, $order[$i]["product_id"]);
+        $productStmt->bind_param('iid', $id, $order[$i]["product_id"], $order[$i]["price"]);
         $productStmt->execute();
         $productStmt->close();
+    }
     }
 
     $response = [

@@ -55,6 +55,9 @@ function fillList(data, i){
     if (order[i].options !== null){
         let extra = document.createElement("div");
         extra.classList.add("extra");
+        extra.addEventListener("click", function(){
+            window.location.href = "itempage?sku=" + prodInfo.product_id;
+        });
         for (let j = 0; j < options.length; j++){
             if (options[j].option_id === order[i].options){
                 extra.innerHTML = options[j].option_name;

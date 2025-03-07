@@ -120,14 +120,17 @@ function fillList(data, i){
 }
 
 function updatePrice(){
-    let price = document.getElementById("price");
+    let price = document.getElementById("priceContainer");
     let formattedPrice = orderPrice.toFixed(2);
     price.innerHTML = "&euro;" + formattedPrice;
 }
 
 document.getElementById("card-button").addEventListener("click", function(){
     completeOrder();
-    // window.location.href = "index";
+
+    setTimeout(function(){
+        window.location.href = "start";
+    }, 3000);
 }
 );
 

@@ -24,10 +24,9 @@ switch ($view) {
         $page = 'public/start.php';
         $style = 'start.css';
         break;
-    case 'admin':
-        $page = 'admin/index.php';
-        $style = 'admin.css';
-        $js = 'admin.js';
+    case 'start':
+        $page = 'public/start.php';
+        $style = 'start.css';
         break;
     case 'api':
         $page = 'functions/index.php';
