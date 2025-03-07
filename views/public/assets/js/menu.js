@@ -1,7 +1,7 @@
 let lang = localStorage.getItem("lang");
 
 async function catApi() {
-  const res = await fetch("views/functions/categories.php", {
+  const res = await fetch("views/functions/categories.php?lang=" + lang, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

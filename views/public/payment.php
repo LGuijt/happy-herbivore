@@ -11,7 +11,7 @@
         </div>
 
         <div class="checkoutContainer">
-            <div class="cancelOrderButton" id="button">
+            <div class="cancelOrderButton" id="cancel-button">
                 Cancel Order
             </div>
             <div class="checkoutButton">

@@ -152,5 +152,13 @@ function updatePrice(){
     price.innerHTML = "&euro;" + formattedPrice;
 }
 
+let cancelButton = document.getElementById("cancel-button");
+
+if (cancelButton) {
+  cancelButton.addEventListener("click", () => {
+    window.location.href = "menu";
+  });
+}
+
 
 
